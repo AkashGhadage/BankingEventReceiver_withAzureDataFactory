@@ -1,0 +1,18 @@
+{
+    "name": "AzureDatabricksLinkedService",
+    "type": "Microsoft.DataFactory/factories/linkedservices",
+    "properties": {
+        "type": "AzureDatabricks",
+        "typeProperties": {
+            "domain": "https://<**databricks-workspace-url>",
+            "authentication": "ServicePrincipal",
+            "servicePrincipalId": "<**service-principal-id>",
+            "servicePrincipalKey": {
+                "type": "SecureString",
+                "value": "<**service-principal-key>"
+            },
+            "tenant": "<**tenant-id>",
+            "existingClusterId": "<**cluster-id>"
+        }
+    }
+}

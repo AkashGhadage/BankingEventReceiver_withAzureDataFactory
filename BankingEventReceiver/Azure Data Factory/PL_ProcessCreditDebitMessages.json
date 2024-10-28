@@ -1,0 +1,32 @@
+{
+    "name": "PL_ProcessCreditDebitMessages",
+    "properties": {
+        "activities": [
+            {
+                "name": "ProcessDatabricksNotebook",
+                "type": "DatabricksNotebook",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "7.00:00:00",
+                    "retry": 2,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "notebookPath": "/Workspace/Notebooks/MessageWorker.py",
+                    "baseParameters": {
+                        "parameter1": "value1",
+                        "parameter2": "value2"
+                    }
+                },
+                "linkedServiceName": {
+                    "referenceName": "AzureDatabricksLinkedService",
+                    "type": "LinkedServiceReference"
+                }
+            }
+        ],
+        "annotations": []
+    }
+}
